@@ -18,7 +18,7 @@
             show = false;
             codeElement = document.querySelector("#codeText");
             var xhr= new XMLHttpRequest();
-            xhr.open('GET', '../simple_object/index.html', true);
+            xhr.open('GET', '../multimarker/index.html', true);
             xhr.onreadystatechange= function() {
             if (this.readyState!==4) return;
             if (this.status!==200) return; 
@@ -47,7 +47,7 @@
                     </a>
             
                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li><a href="#" class="nav-link px-2 text-light">Организаторы</a></li>
+                        <li><a href="../" class="nav-link px-2 text-light">Организаторы</a></li>
                     </ul>
 
                 </div>
@@ -57,21 +57,24 @@
         
         <div class="container">
             <h1 class="text-light">
-                
+                Задание 9
             </h1>
+            </h5 class="text-light">
+                Мультимаркерность
+            </h5>
             <video class="container" class="object-fit-fill" controls>
-                <source src="../videos/fly_plane.mp4" type="video/mp4">
+                <source src="../videos/multy_marker_test.mp4" type="video/mp4">
             </video>
 
             <h5 class="text-light">
                 Ссылки на материалы
-              </h5>
+            </h5>
       
               <div class="gap-2 d-sm-flex mb-5">
-                <a href="https://github.com/Lukashevskiy/ar-examples/tree/master/moving_plane/">
+                <a href="https://github.com/Lukashevskiy/ar-examples/tree/master/multimarker/">
                   <button type="button" class="btn btn-outline-primary btn-lg px-4">Материал задания</button>
                 </a>
-                <a href="https://github.com/Lukashevskiy/ar-examples/tree/master/moving_plane/src/markers/">
+                <a href="https://github.com/Lukashevskiy/ar-examples/tree/master/multimarker/src/markers/">
                   <button type="button" class="btn btn-outline-secondary btn-lg px-4">Маркеры</button>
                 </a>
                   <button type="button" class="btn btn-outline-secondary btn-lg px-4" onclick="showCode()">Код страницы</button>
