@@ -1,0 +1,42 @@
+<head>
+	<title>5. Встроенное видео</title>
+  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        let marker = document.querySelector("#marker");
+        let video = document.querySelector("#video_player");
+
+          
+        marker.addEventListener('markerLost', function() {
+            video.play();
+        });
+                
+        marker.addEventListener('markerFound', function() {
+            video.pause();
+        });    
+    });
+  </script>
+  </head>
+  <body>
+    <a-scene 
+        embedded
+        vr-mode-ui="enabled: false;"
+        arjs="trackingMethod: best; debugUIEnabled: false;"
+        renderer="logarithmicDepthBuffer: true;"
+    >
+
+      <a-assets>
+        <video controls muted id ="video" src="../media/video/video_example_for_task5.mp4"></video>
+      </a-assets>
+
+      <a-marker preset="hiro" id="scene">
+        <a-video id="video_player" src="#video" rotation ="-90 0 0"></a-video>
+      </a-marker>
+
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
+
+   

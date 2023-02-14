@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <title>4. Встроенное аудио</title>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script>  
+        document.addEventListener("DOMContentLoaded", () =>{
+            let audio = document.querySelector("#audio_player");
+            let marker = document.querySelector("#marker")
+            
+            marker.addEventListener('markerLost', function() {
+                audio.components.sound.pauseSound();
+            });
+                
+            marker.addEventListener('markerFound', function() {
+                audio.components.sound.playSound();
+            });         
+        });
+    </script>
+
+    <body style="margin : 0px; overflow: hidden;">
+        <a-scene
+            embedded
+            vr-mode-ui="enabled: false;"
+            arjs="trackingMethod: best; debugUIEnabled: false;"
+            renderer="logarithmicDepthBuffer: true;"
+        >
+
+        <a-assets>
+            <audio id="audio_file" src="/src/audio/audio_example_for_task4.mp3"></audio>      
+        </a-assets>
+
+        <a-marker preset="hiro" id="marker">    
+            <a-box color="red">
+                <a-sound src="#audio_file" id="audio_player"></a-sound>
+            </a-box>
+        </a-marker>
+
+        <a-entity camera></a-entity>
+</a-scene>
+    </body>
+</html>
