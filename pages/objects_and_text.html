@@ -18,7 +18,7 @@
             show = false;
             codeElement = document.querySelector("#codeText");
             var xhr= new XMLHttpRequest();
-            xhr.open('GET', '../objects_and_text/index.html', true);
+            xhr.open('GET', '../object_and_text/index.html', true);
             xhr.onreadystatechange= function() {
             if (this.readyState!==4) return;
             if (this.status!==200) return; 
@@ -72,10 +72,10 @@
               </h5>
       
               <div class="gap-2 d-sm-flex mb-5">
-                <a href="https://github.com/Lukashevskiy/ar-examples/tree/master/objects_and_text/">
+                <a href="https://github.com/Lukashevskiy/ar-examples/tree/master/object_and_text/">
                   <button type="button" class="btn btn-outline-primary btn-lg px-4">Материал задания</button>
                 </a>
-                <a href="https://github.com/Lukashevskiy/ar-examples/tree/master/objects_and_text/src/marker/">
+                <a href="https://github.com/Lukashevskiy/ar-examples/tree/master/object_and_text/src/marker/">
                   <button type="button" class="btn btn-outline-secondary btn-lg px-4">Маркеры</button>
                 </a>
                   <button type="button" class="btn btn-outline-secondary btn-lg px-4" onclick="showCode()">Код страницы</button>
