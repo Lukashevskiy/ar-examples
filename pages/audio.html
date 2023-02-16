@@ -22,7 +22,7 @@
             xhr.onreadystatechange= function() {
             if (this.readyState!==4) return;
             if (this.status!==200) return; 
-                codeElement.innerText= this.responseText;
+                codeElement.innerText = this.responseText;
             };
             xhr.send();
 
@@ -42,6 +42,7 @@
         <header class="p-3 bg-dark">
             <div class="container">
                 <div class="d-flex flex-wrap align-items-center justify-content-md-between">
+                    
                     <a href="https://ntcontest.ru/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
                         <img class="bi me-2" width="200px" height="80px" role="img" src="https://ntcontest.ru/local/templates/main/img/header-logo-nto.svg"></svg>
                     </a>

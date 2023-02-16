@@ -18,11 +18,11 @@
             show = false;
             codeElement = document.querySelector("#codeText");
             var xhr= new XMLHttpRequest();
-            xhr.open('GET', '../simple_object/index.html', true);
+            xhr.open('GET', '../hole/index2.html', true);
             xhr.onreadystatechange= function() {
             if (this.readyState!==4) return;
             if (this.status!==200) return; 
-                codeElement.innerText= this.responseText;
+                codeElement.innerHTML= this.responseText;
             };
             xhr.send();
 
@@ -47,7 +47,7 @@
                     </a>
             
                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li><a href="#" class="nav-link px-2 text-light">Организаторы</a></li>
+                        <li><a href="../index.html" class="nav-link px-2 text-light">Организаторы</a></li>
                     </ul>
 
                 </div>
@@ -57,10 +57,13 @@
         
         <div class="container">
             <h1 class="text-light">
-                Номер задания
+                Задание 10
             </h1>
+            <h5 class="text-light">
+                Эффект углубления в плоскости маркера
+            </h5>
             <video class="container" class="object-fit-fill" controls>
-                <source src="https://www.youtube.com/watch?v=C2y8hiE0ABw" type="video/mp4">
+                <source src="../videos/hole_box.mp4" type="video/mp4">
             </video>
 
             <h5 class="text-light">
