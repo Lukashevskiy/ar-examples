@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <title>Куб</title>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let marker = document.querySelector("#marker");
+            let video = document.querySelector("#video_player");
+
+          
+            marker.addEventListener('markerLost', function() {
+                video.play();
+            });
+                
+            marker.addEventListener('markerFound', function() {
+                video.pause();
+            });    
+        });
+    </script>
+    <body style="margin : 0px; overflow: hidden;">
+        <a-scene 
+            embedded
+            vr-mode-ui="enabled: false;"
+            arjs="trackingMethod: best; debugUIEnabled: false;"
+            renderer="logarithmicDepthBuffer: true;"
+        >
+
+            <a-assets>
+                <video id="video" src="./src/nto.mp4"></video>
+                <a-asset-item id="model1" src="./src/models/Rena.gltf"></a-asset-item>
+                <a-asset-item id="model2" src="./src/models/GlobeAR.gltf"></a-asset-item>
+                <a-asset-item id="model3" src="./src/models/GlockeFinale2.gltf"></a-asset-item>
+                <a-asset-item id="model4" src="./src/models/CarouselFixedTextures.gltf"></a-asset-item>
+
+            </a-assets>
+            <a-marker id="marker" type="pattern" preset="kanji">
+                <a-video id="video-player" scr="#video"></a-video>
+            </a-marker>
+
+            <a-marker type="pattern" url="./src/markers/patts/letterA.patt">
+                <a-gltf-model src="#model4" scale="10 10 10" animation-mixer></a-gltf-model>
+            </a-marker>
+            
+            <a-marker type="pattern" url="./src/markers/patts/letterB.patt">
+                <a-gltf-model src="#model3" scale="2 2 2" animation-mixer></a-gltf-model>
+            </a-marker>
+            
+            <a-marker type="pattern" url="./src/markers/patts/letterC.patt">
+                <a-gltf-model src="#model1" animation-mixer></a-gltf-model>
+            </a-marker>
+            
+            <a-marker type="pattern" url="./src/markers/patts/letterF.patt">
+                <a-gltf-model src="#model2" animation-mixer></a-gltf-model>
+            </a-marker>
+            
+            <a-marker type="pattern" url="./src/markers/patts/letterD.patt">
+                <a-gltf-model src="#model1" animation-mixer></a-gltf-model>
+            </a-marker>
+            
+            <a-entity camera></a-entity>
+        </a-scene>
+    </body>
+</html>
