@@ -16,6 +16,18 @@
             marker.addEventListener('markerFound', function() {
                 video.pause();
             });    
+
+            let marker2 = document.querySelector("#marker2");
+            let video2 = document.querySelector("#video_player2");
+
+          
+            marker2.addEventListener('markerLost', function() {
+                video2.play();
+            });
+                
+            marker2.addEventListener('markerFound', function() {
+                video2.pause();
+            });    
         });
     </script>
     <body style="margin : 0px; overflow: hidden;">
@@ -28,34 +40,33 @@
 
             <a-assets>
                 <video id="video" src="./src/nto.mp4"></video>
-                <a-asset-item id="model1" src="./src/models/Rena.gltf"></a-asset-item>
-                <a-asset-item id="model2" src="./src/models/GlobeAR.gltf"></a-asset-item>
-                <a-asset-item id="model3" src="./src/models/GlockeFinale2.gltf"></a-asset-item>
-                <a-asset-item id="model4" src="./src/models/CarouselFixedTextures.gltf"></a-asset-item>
-
+                <video id="video2" src="./src/nto2.mp4"></video>
+                <a-asset-item id="model1" src="./src/models/model.gltf"></a-asset-item>
+                <a-asset-item id="model2" src="./src/models/model2.gltf"></a-asset-item>
+                <a-asset-item id="model3" src="./src/models/model3.gltf"></a-asset-item>
             </a-assets>
             <a-marker id="marker" type="pattern" preset="kanji">
-                <a-video id="video-player" scr="#video"></a-video>
+                <a-video rotation ="-90 0 0" id="video-player" scr="#video"></a-video>
             </a-marker>
 
-            <a-marker type="pattern" url="./src/markers/patts/letterA.patt">
-                <a-gltf-model src="#model4" scale="10 10 10" animation-mixer></a-gltf-model>
-            </a-marker>
-            
-            <a-marker type="pattern" url="./src/markers/patts/letterB.patt">
-                <a-gltf-model src="#model3" scale="2 2 2" animation-mixer></a-gltf-model>
+            <a-marker id="marker2" type="pattern" url="./src/markers/patts/letterA.patt">
+                <a-video rotation="-90 0 0" id="video-player2" scr="video2"></a-video>
             </a-marker>
             
             <a-marker type="pattern" url="./src/markers/patts/letterC.patt">
-                <a-gltf-model src="#model1" animation-mixer></a-gltf-model>
+                <a-gltf-model src="#model1" scale="0.5 0.5 0.5" animation-mixer></a-gltf-model>
             </a-marker>
             
             <a-marker type="pattern" url="./src/markers/patts/letterF.patt">
-                <a-gltf-model src="#model2" animation-mixer></a-gltf-model>
+                <a-gltf-model src="#model4" scale="0.5 0.5 0.5" animation-mixer></a-gltf-model>
             </a-marker>
             
+            <a-marker type="pattern" url="./src/markers/patts/letterB.patt">
+                <a-gltf-model src="#model3" dcale="0.25 0.25 0.25" animation-mixer></a-gltf-model>
+            </a-marker>
+
             <a-marker type="pattern" url="./src/markers/patts/letterD.patt">
-                <a-gltf-model src="#model1" animation-mixer></a-gltf-model>
+                <a-image rotation ="-90 0 0" src="./src/nto.png"></a-image>
             </a-marker>
             
             <a-entity camera></a-entity>
