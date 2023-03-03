@@ -3,7 +3,7 @@
     <title>Куб</title>
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-    <script>
+    <!-- <script>
         document.addEventListener("DOMContentLoaded", () => {
             let marker = document.querySelector("#marker");
             let video = document.querySelector("#video_player");
@@ -28,7 +28,7 @@
             marker2.addEventListener('markerFound', function() {
                 video2.pause();
             });    
-        });
+        }); -->
     </script>
     <body style="margin : 0px; overflow: hidden;">
         <a-scene 
@@ -45,28 +45,34 @@
                 <a-asset-item id="model2" src="./src/models/model2.gltf"></a-asset-item>
                 <a-asset-item id="model3" src="./src/models/model3.gltf"></a-asset-item>
             </a-assets>
-            <a-marker id="marker" type="pattern" url="./src/matkers/patts/pattern-1.patt">
-                <a-video rotation ="-90 0 0" id="video-player" scr="#video"></a-video>
+            <a-marker id="marker" type="pattern" url="./src/markers/patts/pattern-1.patt">
+                <!-- <a-video rotation ="-90 0 0" id="video-player" scr="#video"></a-video> -->
+                <a-box color="red"></a-box>
             </a-marker>
 
             <a-marker id="marker2" type="pattern" url="./src/markers/patts/pattern-2.patt">
-                <a-video rotation="-90 0 0" id="video-player2" scr="video2"></a-video>
+                <!-- <a-video rotation="-90 0 0" id="video-player2" scr="video2"></a-video> -->
+                <a-box color="blue"></a-box>
             </a-marker>
             
             <a-marker type="pattern" url="./src/markers/patts/pattern-3.patt">
-                <a-gltf-model src="#model1" scale="0.5 0.5 0.5" animation-mixer></a-gltf-model>
+                <a-box color="green"></a-box>
+                <!-- <a-gltf-model src="#model1" scale="0.5 0.5 0.5" animation-mixer></a-gltf-model> -->
             </a-marker>
             
             <a-marker type="pattern" url="./src/markers/patts/pattern-4.patt">
-                <a-gltf-model src="#model4" scale="0.5 0.5 0.5" animation-mixer></a-gltf-model>
+                <a-box color="yellow"></a-box>
+                <!-- <a-gltf-model src="#model4" scale="0.5 0.5 0.5" animation-mixer></a-gltf-model> -->
             </a-marker>
             
             <a-marker type="pattern" url="./src/markers/patts/pattern-5.patt">
-                <a-gltf-model src="#model3" dcale="0.1 0.1 0.1" animation-mixer></a-gltf-model>
+                <a-box color="purple"></a-box>
+                <!-- <a-gltf-model src="#model3" dcale="0.1 0.1 0.1" animation-mixer></a-gltf-model> -->
             </a-marker>
 
             <a-marker type="pattern" url="./src/markers/patts/pattern-6.patt">
-                <a-image rotation ="-90 0 0" src="./src/nto.png"></a-image>
+                <a-box color="black"></a-box>
+                <!-- <a-image rotation ="-90 0 0" src="./src/nto.png"></a-image> -->
             </a-marker>
             
             <a-entity camera></a-entity>
